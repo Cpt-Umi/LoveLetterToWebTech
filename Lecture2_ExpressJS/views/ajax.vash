@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Important to keep track of the paths you set. I spent a good 10 minutes because my path included the public folder -->
+        <script src="/js/code.jquery.com_jquery-3.7.1.min.js"></script>
+        <!-- Setting up ajax in the second script tag -->
+        <script>
+            $(document).ready(function () {
+                // alert("JQuery is Online!");
+                // Setting a route for the ajax
+                let num = $("#num").val();
+                $.ajax({
+                    url: "/xhr-action",
+                    method: "GET",
+                    data: { num },
+                }).done(function (res) {
+                    console.log(res);
+                    $("#result").text(res.num);
+                });
+            });
+        </script>
+        <title>AjaxDemo</title>
+    </head>
+    <body>
+        <input
+            type="text"
+            name="num"
+            id="num"
+            placeholder="Number"
+            value="10"
+        />
+        <p id="result"></p>
+    </body>
+</html>
