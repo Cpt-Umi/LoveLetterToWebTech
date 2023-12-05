@@ -10,6 +10,12 @@ table, th, td, tr {
   border: 1px solid #808080;
 }
 
+.col {
+  display: inline-block;
+  vertical-align: top;
+  width: 48%;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
